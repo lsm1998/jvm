@@ -68,11 +68,12 @@ public class RunTest
         thread.pushFrame(frame);
         System.out.println("指令条数："+codes.length);
         System.out.println("指令总览："+Arrays.toString(codes));
+        // 字节码指令读取对象
+        ByteCodeReader reader=new ByteCodeReader();
         while (true)
         {
             int pc=frame.nextPC;
             thread.pc=pc;
-            ByteCodeReader reader=new ByteCodeReader();
             reader.reSet(codes,pc);
             short temp= reader.readU1();
             Instruction instruction= InstructionFactory.NewInstruction(temp);
