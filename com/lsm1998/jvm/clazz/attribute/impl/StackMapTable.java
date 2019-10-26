@@ -27,13 +27,14 @@ public class StackMapTable implements AttributeInfo
     {
         attributeNameIndex= ClassReadUtil.readU2(classRead);
         attributeLength=ClassReadUtil.readU4(classRead);
-        numberOfEntries= ClassReadUtil.readU2(classRead);
-        entries=new Entrie[numberOfEntries];
-        for (int i = 0; i < numberOfEntries; i++)
-        {
-            Entrie entrie = new Entrie();
-            entries[i] = entrie.readInfo(classRead);
-        }
+        classRead.currentIndex+=attributeLength;
+//        numberOfEntries= ClassReadUtil.readU2(classRead);
+//        entries=new Entrie[numberOfEntries];
+//        for (int i = 0; i < numberOfEntries; i++)
+//        {
+//            Entrie entrie = new Entrie();
+//            entries[i] = entrie.readInfo(classRead);
+//        }
     }
 
     @Override

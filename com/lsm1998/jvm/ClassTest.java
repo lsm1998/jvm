@@ -21,8 +21,8 @@ public class ClassTest
     {
         // java解析class文件命令：javap -verbose 文件名
         MyClassLoader classLoader=new MyClassLoader();
-        classLoader.loadClass("D:\\test.class");
-        // classLoader.loadClass("java/lang/String");
+        //classLoader.loadClass("D:\\test.class");
+         classLoader.loadClass("java/lang/String");
         Map<String, Clazz> map=classLoader.map;
         for (String key:map.keySet())
         {
