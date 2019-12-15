@@ -26,6 +26,8 @@ public class CmdParse
         {
             // 加载元配置
             Class.forName("com.lsm1998.jvm.config.MataConfig");
+            // 加载本地方法
+            Class.forName("com.lsm1998.jvm.vm.natives.NativeRegistry");
         } catch (ClassNotFoundException e)
         {
             e.printStackTrace();

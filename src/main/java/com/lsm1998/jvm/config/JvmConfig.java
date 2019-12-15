@@ -25,10 +25,6 @@ public class JvmConfig implements Config
     private String name;
     // 配置文件名称
     private String confName;
-    // 日志文件存放目录
-    private String logDir;
-    // 日志文件
-    private String logName;
 
     /**
      * 虚拟机相关配置(vm)

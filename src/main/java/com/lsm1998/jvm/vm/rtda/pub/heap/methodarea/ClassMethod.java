@@ -1,4 +1,4 @@
-package com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea;
+package com.lsm1998.jvm.vm.rtda.pub.heap.methodarea;
 
 import com.lsm1998.jvm.vm.clazz.ClassFile;
 import com.lsm1998.jvm.vm.clazz.Method;

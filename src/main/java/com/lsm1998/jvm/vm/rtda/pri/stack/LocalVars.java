@@ -1,6 +1,7 @@
-package com.lsm1998.jvm.vm.runtimedata.privatedata.stack;
+package com.lsm1998.jvm.vm.rtda.pri.stack;
 
 import com.lsm1998.jvm.util.ByteUtil;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.RtObject;
 
 /**
  * @作者：刘时明
@@ -26,12 +27,12 @@ public class LocalVars
         return slots[index].num;
     }
 
-    public void setRef(int index, Object val)
+    public void setRef(int index, RtObject val)
     {
         slots[index].ref = val;
     }
 
-    public Object getRef(int index)
+    public RtObject getRef(int index)
     {
         return slots[index].ref;
     }

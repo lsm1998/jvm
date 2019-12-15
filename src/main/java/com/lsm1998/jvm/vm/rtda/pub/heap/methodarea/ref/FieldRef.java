@@ -1,10 +1,10 @@
-package com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.ref;
+package com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ref;
 
 import com.lsm1998.jvm.vm.clazz.ClassFile;
 import com.lsm1998.jvm.vm.clazz.Field;
 import com.lsm1998.jvm.vm.clazz.constant.impl.ConstantFieldRefInfo;
 import com.lsm1998.jvm.vm.clazz.constant.impl.ConstantNameAndTypeInfo;
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.ConstantPool;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ConstantPool;
 import com.lsm1998.jvm.util.ConstantUtil;
 
 /**

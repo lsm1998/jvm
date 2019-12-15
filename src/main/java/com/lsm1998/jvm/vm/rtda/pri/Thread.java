@@ -1,30 +1,26 @@
-package com.lsm1998.jvm.vm.runtimedata.privatedata;
+package com.lsm1998.jvm.vm.rtda.pri;
 
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Stack;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.VMStack;
+import lombok.Data;
 
 /**
  * @作者：刘时明
  * @时间：2019/3/16-14:40
  * @说明：
  */
+@Data
 public class Thread
 {
     // 程序计数器
-    public int pc;
+    private int pc;
     // 虚拟机栈
-    public Stack stack;
+    private VMStack stack;
 
-    private Thread()
+    public Thread()
     {
-    }
-
-    public static Thread newThread()
-    {
-        Thread thread = new Thread();
-        thread.pc = 0;
-        thread.stack = new Stack(1024);
-        return thread;
+        this.pc = 0;
+        this.stack = new VMStack(1024);
     }
 
     /**
@@ -45,5 +41,14 @@ public class Thread
     public Frame popFrame()
     {
         return this.stack.pop();
+    }
+
+    /**
+     * 获取当前栈帧
+     * @return
+     */
+    public Frame currentFrame()
+    {
+        return this.stack.top();
     }
 }

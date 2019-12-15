@@ -3,7 +3,7 @@ package com.lsm1998.jvm.vm.interpreter.instruction.control;
 import com.lsm1998.jvm.vm.interpreter.base.BranchInstruction;
 import com.lsm1998.jvm.vm.interpreter.base.BranchLogic;
 import com.lsm1998.jvm.vm.interpreter.base.ByteCodeReader;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -31,7 +31,7 @@ public class TableSwitch extends BranchInstruction
     @Override
     public void execute(Frame frame)
     {
-        int index=frame.operandsStack.popInt();
+        int index=frame.getOperandsStack().popInt();
         int offset;
         if(index>=this.low&&index<=this.high)
         {

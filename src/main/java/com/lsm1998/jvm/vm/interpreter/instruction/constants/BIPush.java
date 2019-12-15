@@ -2,7 +2,7 @@ package com.lsm1998.jvm.vm.interpreter.instruction.constants;
 
 import com.lsm1998.jvm.vm.interpreter.base.ByteCodeReader;
 import com.lsm1998.jvm.vm.interpreter.instruction.Instruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -22,7 +22,7 @@ public class BIPush implements Instruction
     @Override
     public void execute(Frame frame)
     {
-        frame.operandsStack.pushInt(val);
+        frame.getOperandsStack().pushInt(val);
     }
 
     @Override

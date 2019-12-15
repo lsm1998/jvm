@@ -1,4 +1,6 @@
-package com.lsm1998.jvm.vm.runtimedata.privatedata.stack;
+package com.lsm1998.jvm.vm.rtda.pri.stack;
+
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.RtObject;
 
 /**
  * @作者：刘时明
@@ -8,7 +10,7 @@ package com.lsm1998.jvm.vm.runtimedata.privatedata.stack;
 public class Slot
 {
     public int num;
-    public Object ref;
+    public RtObject ref;
 
     @Override
     public String toString()

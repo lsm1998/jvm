@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.loads;
 
 import com.lsm1998.jvm.vm.interpreter.base.Index8Instruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -13,8 +13,8 @@ public class ILoad extends Index8Instruction
     @Override
     public void execute(Frame frame)
     {
-        int temp=frame.localVars.getInt(this.index);
-        frame.operandsStack.pushInt(temp);
+        int temp=frame.getLocalVars().getInt(this.index);
+        frame.getOperandsStack().pushInt(temp);
     }
 
     @Override

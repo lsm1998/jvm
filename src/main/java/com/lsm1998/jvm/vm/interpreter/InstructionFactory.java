@@ -192,8 +192,6 @@ public class InstructionFactory
     static
     {
         instructionMap = new HashMap<>();
-        /// int i=0;
-        // instructionMap.put(i++, nop);
         instructionMap.put(0x00, nop);
         instructionMap.put(0x01, aConstNull);
         instructionMap.put(0x02, iConst_m1);

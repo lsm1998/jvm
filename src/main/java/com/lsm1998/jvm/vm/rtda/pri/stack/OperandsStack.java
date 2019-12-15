@@ -1,6 +1,7 @@
-package com.lsm1998.jvm.vm.runtimedata.privatedata.stack;
+package com.lsm1998.jvm.vm.rtda.pri.stack;
 
 import com.lsm1998.jvm.util.ByteUtil;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.RtObject;
 
 /**
  * @作者：刘时明
@@ -49,14 +50,14 @@ public class OperandsStack
         return temp;
     }
 
-    public void pushRef(Object ref)
+    public void pushRef(RtObject ref)
     {
         this.slots[size++].ref = ref;
     }
 
-    public Object popRef()
+    public RtObject popRef()
     {
-        Object temp = slots[--size].ref;
+        RtObject temp = slots[--size].ref;
         slots[size].ref = null;
         return temp;
     }

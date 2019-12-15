@@ -67,14 +67,6 @@ public class ConfigParse
             {
                 config.setClassPath((String) vmMap.get("class-path"));
             }
-            if (vmMap.containsKey("log-dir"))
-            {
-                config.setLogDir((String) vmMap.get("log-dir"));
-            }
-            if (vmMap.containsKey("log-name"))
-            {
-                config.setLogName((String) vmMap.get("log-name"));
-            }
         }
     }
 }

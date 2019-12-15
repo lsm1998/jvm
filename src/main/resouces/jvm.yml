@@ -1,8 +1,6 @@
 base:
   name: lsm的jvm
   hello: 你好，欢迎使用
-  log-name: jvm.log
-  log-dir: E:/logs
   class-path: hello.class
   mode: RUN
 

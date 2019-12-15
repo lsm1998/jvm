@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.test;
 
-import com.lsm1998.jvm.vm.runtimedata.MyClassLoader;
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.Clazz;
+import com.lsm1998.jvm.vm.rtda.pub.MyClassLoader;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.Clazz;
 
 import java.util.Map;
 

@@ -10,11 +10,12 @@
 3.RunTest类作用是执行一个类的主方法，需要指定该类的绝对路径，解释执行该类主方法的字节码指令，并打印Code指令；
 
 <h4>目录说明</h4>
-1.clazz：目录主要定义了Class文件结构； \
-2.interpreter：目录主要定义了Code指令集； \
-3.runtimedata：目录主要定义了运行时数据区、类加载器等； \
+1.vm/clazz：目录主要定义了Class文件结构； \
+2.vm/interpreter：目录主要定义了Code指令集； \
+3.vm/runtimedata：目录主要定义了运行时数据区、类加载器等； \
 4.test：存放测试用例，可以忽略； \
-5.utils：存放工具类；
+5.utils：存放工具类；\
+5.config：主要是启动工作和解析配置
 
 <h4>帮助命令</h4>
 1.java解析class文件命令：javap -verbose 文件名

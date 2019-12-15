@@ -1,8 +1,8 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.stack;
 
 import com.lsm1998.jvm.vm.interpreter.base.NoOperandsInstruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Slot;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Slot;
 
 /**
  * @作者：刘时明
@@ -14,9 +14,9 @@ public class Dup extends NoOperandsInstruction
     @Override
     public void execute(Frame frame)
     {
-        Slot slot= frame.operandsStack.popSlot();
-        frame.operandsStack.pushSlot(slot);
-        frame.operandsStack.pushSlot(slot);
+        Slot slot= frame.getOperandsStack().popSlot();
+        frame.getOperandsStack().pushSlot(slot);
+        frame.getOperandsStack().pushSlot(slot);
     }
 
     @Override

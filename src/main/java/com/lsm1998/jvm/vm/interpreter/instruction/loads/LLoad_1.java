@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.loads;
 
 import com.lsm1998.jvm.vm.interpreter.base.NoOperandsInstruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -13,8 +13,8 @@ public class LLoad_1 extends NoOperandsInstruction
     @Override
     public void execute(Frame frame)
     {
-        long temp=frame.localVars.getLong(1);
-        frame.operandsStack.pushLong(temp);
+        long temp=frame.getLocalVars().getLong(1);
+        frame.getOperandsStack().pushLong(temp);
     }
 
     @Override

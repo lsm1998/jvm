@@ -1,7 +1,8 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.stores;
 
 import com.lsm1998.jvm.vm.interpreter.base.NoOperandsInstruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.RtObject;
 
 /**
  * @作者：刘时明
@@ -13,8 +14,8 @@ public class AStore_0 extends NoOperandsInstruction
     @Override
     public void execute(Frame frame)
     {
-        Object temp=frame.operandsStack.popRef();
-        frame.localVars.setRef(0,temp);
+        RtObject temp=frame.getOperandsStack().popRef();
+        frame.getLocalVars().setRef(0,temp);
     }
 
     @Override

@@ -1,7 +1,7 @@
-package com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.ref;
+package com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ref;
 
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.Clazz;
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.ConstantPool;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.Clazz;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ConstantPool;
 
 /**
  * @作者：刘时明

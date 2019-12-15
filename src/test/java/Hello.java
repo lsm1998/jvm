@@ -6,6 +6,9 @@
 
 public class Hello
 {
+    private int i;
+    private static int tom;
+
     public static void main(String[] args)
     {
         int sum = 0;
@@ -13,5 +16,10 @@ public class Hello
         {
             sum += i;
         }
+        System.out.println(sum);
+        String name = "hello";
+        Hello user=new Hello();
+        user.i=sum;
+        System.out.println(user.i);
     }
 }

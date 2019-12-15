@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.math;
 
 import com.lsm1998.jvm.vm.interpreter.base.NoOperandsInstruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -13,10 +13,10 @@ public class LRem extends NoOperandsInstruction
     @Override
     public void execute(Frame frame)
     {
-        long val1= frame.operandsStack.popLong();
-        long val2= frame.operandsStack.popLong();
+        long val1= frame.getOperandsStack().popLong();
+        long val2= frame.getOperandsStack().popLong();
         long result=val1%val2;
-        frame.operandsStack.pushLong(result);
+        frame.getOperandsStack().pushLong(result);
     }
 
     @Override

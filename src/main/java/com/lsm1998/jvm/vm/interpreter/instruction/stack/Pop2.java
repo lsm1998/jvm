@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.stack;
 
 import com.lsm1998.jvm.vm.interpreter.base.NoOperandsInstruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -13,8 +13,8 @@ public class Pop2 extends NoOperandsInstruction
     @Override
     public void execute(Frame frame)
     {
-        frame.operandsStack.popSlot();
-        frame.operandsStack.popSlot();
+        frame.getOperandsStack().popSlot();
+        frame.getOperandsStack().popSlot();
     }
 
     @Override

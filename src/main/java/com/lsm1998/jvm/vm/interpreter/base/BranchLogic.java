@@ -1,6 +1,6 @@
 package com.lsm1998.jvm.vm.interpreter.base;
 
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -9,9 +9,9 @@ import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
  */
 public class BranchLogic
 {
-    public static void branch(Frame frame,int offset)
+    public static void branch(Frame frame, int offset)
     {
-        int pc=frame.thread.pc;
-        frame.nextPC=pc+offset;
+        int pc = frame.getThread().getPc();
+        frame.setNextPC(pc + offset);
     }
 }

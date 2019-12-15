@@ -1,7 +1,7 @@
-package com.lsm1998.jvm.vm.runtimedata;
+package com.lsm1998.jvm.vm.rtda.pub;
 
 import com.lsm1998.jvm.vm.clazz.ClassRead;
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.Clazz;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.Clazz;
 import com.lsm1998.jvm.util.FileUtil;
 import lombok.Data;
 
@@ -16,10 +16,12 @@ import java.util.Map;
 @Data
 public class MyClassLoader
 {
+    private String path;
     private Map<String, Clazz> map = new HashMap<>();
 
     public Clazz loadClass(String path)
     {
+        this.path = path;
         if (map.containsKey(path))
         {
             return map.get(path);

@@ -2,8 +2,8 @@ package com.lsm1998.jvm.vm.interpreter.instruction.math;
 
 import com.lsm1998.jvm.vm.interpreter.base.ByteCodeReader;
 import com.lsm1998.jvm.vm.interpreter.instruction.Instruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.LocalVars;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.LocalVars;
 
 /**
  * @作者：刘时明
@@ -25,7 +25,7 @@ public class Iinc implements Instruction
     @Override
     public void execute(Frame frame)
     {
-        LocalVars localVars=frame.localVars;
+        LocalVars localVars=frame.getLocalVars();
         int val=localVars.getInt(index);
         val+=consts;
         localVars.setInt(index,val);

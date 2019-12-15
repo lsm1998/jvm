@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.conversations;
 
 import com.lsm1998.jvm.vm.interpreter.base.NoOperandsInstruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -13,8 +13,8 @@ public class I2L extends NoOperandsInstruction
     @Override
     public void execute(Frame frame)
     {
-        int val=frame.operandsStack.popInt();
-        frame.operandsStack.pushLong((long)val);
+        int val=frame.getOperandsStack().popInt();
+        frame.getOperandsStack().pushLong((long)val);
     }
 
     @Override

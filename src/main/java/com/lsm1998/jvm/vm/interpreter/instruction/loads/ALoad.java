@@ -1,7 +1,8 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.loads;
 
 import com.lsm1998.jvm.vm.interpreter.base.Index8Instruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.RtObject;
 
 /**
  * @作者：刘时明
@@ -13,8 +14,8 @@ public class ALoad extends Index8Instruction
     @Override
     public void execute(Frame frame)
     {
-        Object temp=frame.localVars.getRef(this.index);
-        frame.operandsStack.pushRef(temp);
+        RtObject temp=frame.getLocalVars().getRef(this.index);
+        frame.getOperandsStack().pushRef(temp);
     }
 
     @Override

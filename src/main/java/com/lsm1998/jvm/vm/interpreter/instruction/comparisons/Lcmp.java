@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.comparisons;
 
 import com.lsm1998.jvm.vm.interpreter.base.NoOperandsInstruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -13,17 +13,17 @@ public class Lcmp extends NoOperandsInstruction
     @Override
     public void execute(Frame frame)
     {
-        long val2=frame.operandsStack.popLong();
-        long val1=frame.operandsStack.popLong();
+        long val2=frame.getOperandsStack().popLong();
+        long val1=frame.getOperandsStack().popLong();
         if(val2>val1)
         {
-            frame.operandsStack.pushInt(1);
+            frame.getOperandsStack().pushInt(1);
         }else if(val2==val1)
         {
-            frame.operandsStack.pushInt(0);
+            frame.getOperandsStack().pushInt(0);
         }else
         {
-            frame.operandsStack.pushInt(-1);
+            frame.getOperandsStack().pushInt(-1);
         }
     }
 

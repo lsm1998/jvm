@@ -18,10 +18,6 @@ public class StarterBuilder
     public StarterBuilder()
     {
         this.config = new JvmConfig();
-//        if(parse!=null)
-//        {
-//            this.confMap = YmlUtil.loadYml(parse.args()[0]);
-//        }
     }
 
     public StarterBuilder parse(CmdParse parse)
@@ -51,21 +47,9 @@ public class StarterBuilder
         return this;
     }
 
-    public StarterBuilder logName(String logName)
-    {
-        config.setLogName(logName);
-        return this;
-    }
-
     public StarterBuilder maxStack(Integer maxStack)
     {
         config.setMaxStack(maxStack);
-        return this;
-    }
-
-    public StarterBuilder logDir(String logDir)
-    {
-        config.setLogDir(logDir);
         return this;
     }
 

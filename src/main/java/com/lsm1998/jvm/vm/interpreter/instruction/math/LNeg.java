@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.vm.interpreter.instruction.math;
 
 import com.lsm1998.jvm.vm.interpreter.base.NoOperandsInstruction;
-import com.lsm1998.jvm.vm.runtimedata.privatedata.stack.Frame;
+import com.lsm1998.jvm.vm.rtda.pri.stack.Frame;
 
 /**
  * @作者：刘时明
@@ -13,8 +13,8 @@ public class LNeg extends NoOperandsInstruction
     @Override
     public void execute(Frame frame)
     {
-        long val= frame.operandsStack.popLong();
-        frame.operandsStack.pushLong(-val);
+        long val= frame.getOperandsStack().popLong();
+        frame.getOperandsStack().pushLong(-val);
     }
 
     @Override

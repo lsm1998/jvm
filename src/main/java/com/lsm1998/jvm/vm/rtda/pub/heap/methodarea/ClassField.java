@@ -1,9 +1,10 @@
-package com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea;
+package com.lsm1998.jvm.vm.rtda.pub.heap.methodarea;
 
 import com.lsm1998.jvm.vm.clazz.ClassFile;
 import com.lsm1998.jvm.vm.clazz.Field;
 import com.lsm1998.jvm.util.ConstantUtil;
 import lombok.Data;
+import org.itstack.demo.jvm.rtda.heap.constantpool.AccessFlags;
 
 /**
  * @作者：刘时明
@@ -17,6 +18,7 @@ public class ClassField
     private String name;
     private String descriptor;
     private Clazz clazz;
+    private int slotId;
 
     private ClassField()
     {
@@ -24,7 +26,7 @@ public class ClassField
 
     public static ClassField[] getClazzField(Clazz clazz, ClassFile classFile)
     {
-        Field[] fields=classFile.getFields();
+        Field[] fields = classFile.getFields();
         ClassField[] classFields = new ClassField[fields.length];
 
         for (int i = 0; i < classFields.length; i++)
@@ -32,10 +34,15 @@ public class ClassField
             classFields[i] = new ClassField();
             classFields[i].clazz = clazz;
             classFields[i].accessFlags = fields[i].accessFlags;
-            classFields[i].name=ConstantUtil.getStringByUTF8Index(classFile,fields[i].nameIndex);
-            classFields[i].descriptor = ConstantUtil.getStringByUTF8Index(classFile,fields[i].descriptorIndex);
+            classFields[i].name = ConstantUtil.getStringByUTF8Index(classFile, fields[i].nameIndex);
+            classFields[i].descriptor = ConstantUtil.getStringByUTF8Index(classFile, fields[i].descriptorIndex);
         }
         return classFields;
+    }
+
+    public boolean isStatic()
+    {
+        return 0 != (this.accessFlags & AccessFlags.ACC_STATIC);
     }
 
     @Override

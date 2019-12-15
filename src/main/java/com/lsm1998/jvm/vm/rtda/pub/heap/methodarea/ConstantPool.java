@@ -1,12 +1,12 @@
-package com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea;
+package com.lsm1998.jvm.vm.rtda.pub.heap.methodarea;
 
 import com.lsm1998.jvm.vm.clazz.ClassFile;
 import com.lsm1998.jvm.vm.clazz.constant.ConstantInfo;
 import com.lsm1998.jvm.vm.clazz.constant.impl.*;
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.ref.ClassRef;
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.ref.FieldRef;
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.ref.InterfaceMethodRef;
-import com.lsm1998.jvm.vm.runtimedata.publicdata.methodarea.ref.MethodRef;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ref.ClassRef;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ref.FieldRef;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ref.InterfaceMethodRef;
+import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ref.MethodRef;
 
 /**
  * @作者：刘时明
