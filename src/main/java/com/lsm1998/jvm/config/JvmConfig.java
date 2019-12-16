@@ -25,6 +25,10 @@ public class JvmConfig implements Config
     private String name;
     // 配置文件名称
     private String confName;
+    // 操作系统
+    private String osName;
+    // CPU架构
+    private String osArch;
 
     /**
      * 虚拟机相关配置(vm)

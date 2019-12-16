@@ -8,10 +8,10 @@ package com.lsm1998.jvm.config.start;
 import com.lsm1998.jvm.config.JvmConfig;
 import com.lsm1998.jvm.config.define.JvmStarter;
 import com.lsm1998.jvm.config.define.Modes;
-import com.lsm1998.jvm.vm.CodeInterpret;
-import com.lsm1998.jvm.vm.rtda.pub.MyClassLoader;
-import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.ClassMethod;
-import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.Clazz;
+import com.lsm1998.jvm.interpreter.CodeInterpret;
+import com.lsm1998.jvm.rtda.pub.MyClassLoader;
+import com.lsm1998.jvm.rtda.pub.heap.methodarea.ClassMethod;
+import com.lsm1998.jvm.rtda.pub.heap.methodarea.Clazz;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
@@ -53,7 +53,7 @@ public class JvmStarterImpl implements JvmStarter
             Optional<ClassMethod> method = getMain(curr.getMethods());
             if (method.isPresent())
             {
-                CodeInterpret.executeMethod(method.get());
+                CodeInterpret.executeMethod(method.get(), this.jvmConfig().getMaxStack());
             } else
             {
                 log.error("找不到主方法");

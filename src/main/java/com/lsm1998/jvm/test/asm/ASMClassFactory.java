@@ -5,13 +5,11 @@
  */
 package com.lsm1998.jvm.test.asm;
 
-import com.lsm1998.jvm.vm.clazz.ClassRead;
-import com.lsm1998.jvm.vm.rtda.pub.heap.methodarea.Clazz;
+import com.lsm1998.jvm.clazz.ClassRead;
+import com.lsm1998.jvm.rtda.pub.heap.methodarea.Clazz;
 import lombok.extern.slf4j.Slf4j;
 import org.objectweb.asm.ClassWriter;
 
-import static jdk.internal.org.objectweb.asm.Opcodes.ACC_ABSTRACT;
-import static jdk.internal.org.objectweb.asm.Opcodes.ACC_PUBLIC;
 import static org.objectweb.asm.Opcodes.*;
 
 @Slf4j
@@ -41,11 +39,11 @@ public class ASMClassFactory
                 new String[]{"com/lsm1998/IHello"});
         //访问标志，名字，类型，泛型，值
         cw.visitField(ACC_PUBLIC + ACC_STATIC + ACC_FINAL, "LESS", "I",
-                null, new Integer(-1)).visitEnd();
+                null, Integer.valueOf(10)).visitEnd();
         cw.visitField(ACC_PUBLIC + ACC_STATIC + ACC_FINAL, "EQUAL", "I",
-                null, new Integer(0)).visitEnd();
+                null, Integer.valueOf(2)).visitEnd();
         cw.visitField(ACC_PUBLIC + ACC_STATIC + ACC_FINAL, "GRATER", "I",
-                null, new Integer(1)).visitEnd();
+                null, Integer.valueOf(0)).visitEnd();
         //访问标志，名字，签名，泛型，throws异常
         cw.visitMethod(ACC_PUBLIC + ACC_ABSTRACT, "compareTo", "(Ljava/lang/Object;)I",
                 null, null).visitEnd();

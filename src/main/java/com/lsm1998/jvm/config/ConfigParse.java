@@ -12,11 +12,6 @@ import java.util.Map;
 
 public class ConfigParse
 {
-    public static void parseByConfig(Config dist,Config src)
-    {
-
-    }
-
     public static void parseByMap(Map<String, Object> confMap, Config config)
     {
         if (config instanceof JvmConfig)

@@ -23,9 +23,10 @@ public class JvmApplication
                 .parse(parse)
                 .hello("我的JVM")
                 // 指定class文件路径
-                .classPath("C:\\Users\\Administrator\\IdeaProjects\\jvm\\target\\test-classes\\Hello.class")
+                .classPath("C:\\Users\\Admin\\IdeaProjects\\jvm\\target\\test-classes\\Hello.class")
                 // 指定模式为运行
                 .mode(Modes.RUN)
+                .maxStack(512)
                 .build();
         // 3.启动
         starter.start();

@@ -16,10 +16,10 @@ public class Hello
         {
             sum += i;
         }
-        System.out.println(sum);
-        String name = "hello";
-        Hello user=new Hello();
-        user.i=sum;
-        System.out.println(user.i);
+//        System.out.println(sum);
+//        String name = "hello";
+//        Hello user=new Hello();
+//        user.i=sum;
+//        System.out.println(user.i);
     }
 }

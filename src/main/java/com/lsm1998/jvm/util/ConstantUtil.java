@@ -1,10 +1,10 @@
 package com.lsm1998.jvm.util;
 
-import com.lsm1998.jvm.vm.clazz.ClassFile;
-import com.lsm1998.jvm.vm.clazz.constant.ConstantInfo;
-import com.lsm1998.jvm.vm.clazz.constant.impl.ConstantClassInfo;
-import com.lsm1998.jvm.vm.clazz.constant.impl.ConstantStringInfo;
-import com.lsm1998.jvm.vm.clazz.constant.impl.ConstantUTF8Info;
+import com.lsm1998.jvm.clazz.ClassFile;
+import com.lsm1998.jvm.clazz.constant.ConstantInfo;
+import com.lsm1998.jvm.clazz.constant.impl.ConstantClassInfo;
+import com.lsm1998.jvm.clazz.constant.impl.ConstantStringInfo;
+import com.lsm1998.jvm.clazz.constant.impl.ConstantUTF8Info;
 
 /**
  * @作者：刘时明

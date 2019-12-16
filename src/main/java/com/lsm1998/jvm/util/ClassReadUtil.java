@@ -1,6 +1,6 @@
 package com.lsm1998.jvm.util;
 
-import com.lsm1998.jvm.vm.clazz.ClassRead;
+import com.lsm1998.jvm.clazz.ClassRead;
 
 /**
  * @作者：刘时明
