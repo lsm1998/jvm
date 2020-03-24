@@ -60,7 +60,16 @@ public class FileUtil
         {
             return getBytesByJar(path);
         }
-        throw new RuntimeException("class path file not find or not read,path=" + path);
+        return null;
+    }
+
+    public static byte[] getBytesByClass(Class<?> clazz)
+    {
+        if(clazz!=null)
+        {
+            return getBytesByJar(clazz.getName().replace('.','/'));
+        }
+        return null;
     }
 
     /**

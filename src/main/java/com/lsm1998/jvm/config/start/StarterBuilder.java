@@ -35,6 +35,12 @@ public class StarterBuilder
         return this;
     }
 
+    public StarterBuilder classObj(Class<?> obj)
+    {
+        config.setClassObj(obj);
+        return this;
+    }
+
     public StarterBuilder classPath(String classPath)
     {
         config.setClassPath(classPath);

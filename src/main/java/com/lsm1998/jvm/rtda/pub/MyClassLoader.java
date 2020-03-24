@@ -1,6 +1,7 @@
 package com.lsm1998.jvm.rtda.pub;
 
 import com.lsm1998.jvm.clazz.ClassRead;
+import com.lsm1998.jvm.config.RunType;
 import com.lsm1998.jvm.rtda.pub.heap.methodarea.Clazz;
 import com.lsm1998.jvm.util.FileUtil;
 import lombok.Data;
@@ -16,22 +17,42 @@ import java.util.Map;
 @Data
 public class MyClassLoader
 {
+    private RunType runType;
     private String path;
     private Map<String, Clazz> map = new HashMap<>();
 
+    public Clazz loadClass(Class<?> obj)
+    {
+        this.runType=RunType.CLASS_OBJ;
+        this.path = obj.getName().replace('.','/');
+        if (map.containsKey(path))
+        {
+            return map.get(path);
+        }
+        return defineClass(path,obj);
+    }
+
     public Clazz loadClass(String path)
     {
+        this.runType=RunType.CLASS_PATH;
         this.path = path;
         if (map.containsKey(path))
         {
             return map.get(path);
         }
-        return defineClass(path);
+        return defineClass(path,null);
     }
 
-    private Clazz defineClass(String path)
+    private Clazz defineClass(String path,Class<?> c)
     {
-        byte[] bytes = FileUtil.getBytes(path);
+        byte[] bytes;
+        if(this.runType==RunType.CLASS_PATH)
+        {
+            bytes = FileUtil.getBytes(path);
+        }else
+        {
+            bytes = FileUtil.getBytesByClass(c);
+        }
         if (bytes == null)
         {
             throw new RuntimeException("找不到加载类：" + path);

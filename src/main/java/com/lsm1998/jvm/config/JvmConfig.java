@@ -19,6 +19,8 @@ public class JvmConfig implements Config
     private String hello;
     // Class文件路径
     private String classPath;
+    // Class对象
+    private Class<?> classObj;
     // 运行模式
     private Modes mode;
     // jvm名称

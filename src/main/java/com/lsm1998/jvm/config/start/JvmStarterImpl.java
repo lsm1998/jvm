@@ -40,8 +40,15 @@ public class JvmStarterImpl implements JvmStarter
         log.info(this.jvmConfig().getHello());
         String classPath = this.jvmConfig().getClassPath();
         Modes mode = this.jvmConfig().getMode();
-        MyClassLoader classLoader = new MyClassLoader();
-        classLoader.loadClass(classPath);
+        MyClassLoader classLoader= new MyClassLoader();
+        Class<?> obj=this.jvmConfig().getClassObj();
+        if(obj==null)
+        {
+            classLoader.loadClass(classPath);
+        }else {
+            classLoader.loadClass(obj);
+            classPath=obj.getName().replace('.','/');
+        }
         Map<String, Clazz> clazzMap = classLoader.getMap();
         Clazz curr = clazzMap.get(classPath);
         if (mode == Modes.INFO)
