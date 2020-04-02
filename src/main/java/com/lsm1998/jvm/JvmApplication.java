@@ -29,6 +29,7 @@ public class JvmApplication
                 // .classPath("C:\\Users\\Admin\\IdeaProjects\\jvm\\target\\test-classes\\Hello.class")
                 // 指定模式为运行
                 .mode(Modes.RUN)
+                // 操作数栈最大深度
                 .maxStack(512)
                 .build();
         // 3.启动

@@ -3,7 +3,7 @@ package com.lsm1998.jvm.rtda.pub.heap.methodarea.ref;
 import com.lsm1998.jvm.clazz.ClassFile;
 import com.lsm1998.jvm.clazz.constant.impl.ConstantClassInfo;
 import com.lsm1998.jvm.rtda.pub.heap.methodarea.ConstantPool;
-import com.lsm1998.jvm.util.ConstantUtil;
+import com.lsm1998.jvm.utils.ConstantUtil;
 
 /**
  * @作者：刘时明

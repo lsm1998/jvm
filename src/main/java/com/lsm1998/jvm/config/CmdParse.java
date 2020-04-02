@@ -6,7 +6,7 @@
 package com.lsm1998.jvm.config;
 
 import com.lsm1998.jvm.config.define.Modes;
-import com.lsm1998.jvm.util.ArraysUtil;
+import com.lsm1998.jvm.utils.ArraysUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.locks.Lock;

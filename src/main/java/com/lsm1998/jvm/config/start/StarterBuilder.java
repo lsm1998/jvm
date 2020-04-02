@@ -9,7 +9,7 @@ import com.lsm1998.jvm.config.CmdParse;
 import com.lsm1998.jvm.config.ConfigParse;
 import com.lsm1998.jvm.config.JvmConfig;
 import com.lsm1998.jvm.config.define.Modes;
-import com.lsm1998.jvm.util.YmlUtil;
+import com.lsm1998.jvm.utils.YmlUtil;
 
 public class StarterBuilder
 {

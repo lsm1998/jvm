@@ -4,8 +4,8 @@ import com.lsm1998.jvm.clazz.ClassFile;
 import com.lsm1998.jvm.clazz.constant.ConstantInfo;
 import com.lsm1998.jvm.rtda.pri.stack.Slot;
 import com.lsm1998.jvm.rtda.pub.MyClassLoader;
-import com.lsm1998.jvm.util.AccessFlagsUtil;
-import com.lsm1998.jvm.util.ConstantUtil;
+import com.lsm1998.jvm.utils.AccessFlagsUtil;
+import com.lsm1998.jvm.utils.ConstantUtil;
 import lombok.Data;
 
 import java.util.Arrays;

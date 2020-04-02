@@ -4,7 +4,7 @@ import com.lsm1998.jvm.clazz.ClassFile;
 import com.lsm1998.jvm.clazz.Method;
 import com.lsm1998.jvm.clazz.attribute.AttributeInfo;
 import com.lsm1998.jvm.clazz.attribute.impl.Code;
-import com.lsm1998.jvm.util.ConstantUtil;
+import com.lsm1998.jvm.utils.ConstantUtil;
 import lombok.Data;
 
 import java.util.Arrays;

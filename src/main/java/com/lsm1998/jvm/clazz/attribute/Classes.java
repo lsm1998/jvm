@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.clazz.attribute;
 
 import com.lsm1998.jvm.clazz.ClassRead;
-import com.lsm1998.jvm.util.ClassReadUtil;
+import com.lsm1998.jvm.utils.ClassReadUtil;
 
 /**
  * @作者：刘时明

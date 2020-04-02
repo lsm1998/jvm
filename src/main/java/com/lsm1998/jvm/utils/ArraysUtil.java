@@ -3,7 +3,7 @@
  * 时间：2019/12/15-13:02
  * 作用：
  */
-package com.lsm1998.jvm.util;
+package com.lsm1998.jvm.utils;
 
 public class ArraysUtil
 {

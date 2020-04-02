@@ -6,7 +6,7 @@ import com.lsm1998.jvm.clazz.attribute.impl.Deprecated;
 import com.lsm1998.jvm.clazz.attribute.impl.Exceptions;
 import com.lsm1998.jvm.clazz.attribute.impl.RuntimeVisibleAnnotations;
 import com.lsm1998.jvm.clazz.attribute.impl.Signature;
-import com.lsm1998.jvm.util.ClassReadUtil;
+import com.lsm1998.jvm.utils.ClassReadUtil;
 
 import java.util.Arrays;
 

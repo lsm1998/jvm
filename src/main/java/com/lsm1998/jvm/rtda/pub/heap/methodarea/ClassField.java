@@ -2,8 +2,8 @@ package com.lsm1998.jvm.rtda.pub.heap.methodarea;
 
 import com.lsm1998.jvm.clazz.ClassFile;
 import com.lsm1998.jvm.clazz.Field;
-import com.lsm1998.jvm.util.AccessFlagsUtil;
-import com.lsm1998.jvm.util.ConstantUtil;
+import com.lsm1998.jvm.utils.AccessFlagsUtil;
+import com.lsm1998.jvm.utils.ConstantUtil;
 import lombok.Data;
 
 /**

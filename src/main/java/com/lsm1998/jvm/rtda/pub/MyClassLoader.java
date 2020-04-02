@@ -3,7 +3,7 @@ package com.lsm1998.jvm.rtda.pub;
 import com.lsm1998.jvm.clazz.ClassRead;
 import com.lsm1998.jvm.config.RunType;
 import com.lsm1998.jvm.rtda.pub.heap.methodarea.Clazz;
-import com.lsm1998.jvm.util.FileUtil;
+import com.lsm1998.jvm.utils.FileUtil;
 import lombok.Data;
 
 import java.util.HashMap;
