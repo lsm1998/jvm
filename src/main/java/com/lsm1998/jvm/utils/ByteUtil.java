@@ -1,7 +1,6 @@
-package com.lsm1998.jvm.util;
+package com.lsm1998.jvm.utils;
 
 import java.io.*;
-import java.util.Arrays;
 
 /**
  * @作者：刘时明

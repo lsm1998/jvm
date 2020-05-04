@@ -1,6 +1,6 @@
 package com.lsm1998.jvm.test;
 
-import com.lsm1998.jvm.util.ByteUtil;
+import com.lsm1998.jvm.utils.ByteUtil;
 
 /**
  * @作者：刘时明

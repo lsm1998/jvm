@@ -2,7 +2,7 @@ package com.lsm1998.jvm.clazz.constant.impl;
 
 import com.lsm1998.jvm.clazz.ClassRead;
 import com.lsm1998.jvm.clazz.constant.ConstantInfo;
-import com.lsm1998.jvm.util.ByteUtil;
+import com.lsm1998.jvm.utils.ByteUtil;
 
 /**
  * @作者：刘时明

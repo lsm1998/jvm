@@ -3,8 +3,8 @@ package com.lsm1998.jvm.clazz;
 import com.lsm1998.jvm.clazz.attribute.AttributeInfo;
 import com.lsm1998.jvm.clazz.constant.ConstantInfo;
 import com.lsm1998.jvm.clazz.constant.impl.*;
-import com.lsm1998.jvm.util.ByteUtil;
-import com.lsm1998.jvm.util.ClassReadUtil;
+import com.lsm1998.jvm.utils.ByteUtil;
+import com.lsm1998.jvm.utils.ClassReadUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;

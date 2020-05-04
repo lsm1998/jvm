@@ -1,8 +1,8 @@
 package com.lsm1998.jvm.test;
 
 import com.lsm1998.jvm.clazz.ClassRead;
-import com.lsm1998.jvm.util.ByteUtil;
-import com.lsm1998.jvm.util.FileUtil;
+import com.lsm1998.jvm.utils.ByteUtil;
+import com.lsm1998.jvm.utils.FileUtil;
 
 import java.util.Arrays;
 

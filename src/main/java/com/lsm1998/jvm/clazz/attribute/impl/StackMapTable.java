@@ -3,7 +3,7 @@ package com.lsm1998.jvm.clazz.attribute.impl;
 import com.lsm1998.jvm.clazz.ClassRead;
 import com.lsm1998.jvm.clazz.attribute.AttributeInfo;
 import com.lsm1998.jvm.clazz.attribute.impl.entries.Entrie;
-import com.lsm1998.jvm.util.ClassReadUtil;
+import com.lsm1998.jvm.utils.ClassReadUtil;
 
 import java.util.Arrays;
 

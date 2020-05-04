@@ -1,4 +1,4 @@
-package com.lsm1998.jvm.util;
+package com.lsm1998.jvm.utils;
 
 import com.lsm1998.jvm.clazz.ClassRead;
 

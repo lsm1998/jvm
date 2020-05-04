@@ -5,7 +5,7 @@ import com.lsm1998.jvm.clazz.Method;
 import com.lsm1998.jvm.clazz.constant.impl.ConstantMethodRefInfo;
 import com.lsm1998.jvm.clazz.constant.impl.ConstantNameAndTypeInfo;
 import com.lsm1998.jvm.rtda.pub.heap.methodarea.ConstantPool;
-import com.lsm1998.jvm.util.ConstantUtil;
+import com.lsm1998.jvm.utils.ConstantUtil;
 
 /**
  * @作者：刘时明

@@ -3,7 +3,7 @@
  * 时间：2019/12/15-12:51
  * 作用：yml文件工具类
  */
-package com.lsm1998.jvm.util;
+package com.lsm1998.jvm.utils;
 
 import org.yaml.snakeyaml.Yaml;
 

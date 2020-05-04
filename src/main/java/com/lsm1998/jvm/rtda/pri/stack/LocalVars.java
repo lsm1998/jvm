@@ -1,6 +1,6 @@
 package com.lsm1998.jvm.rtda.pri.stack;
 
-import com.lsm1998.jvm.util.ByteUtil;
+import com.lsm1998.jvm.utils.ByteUtil;
 import com.lsm1998.jvm.rtda.pub.heap.methodarea.RtObject;
 
 /**
