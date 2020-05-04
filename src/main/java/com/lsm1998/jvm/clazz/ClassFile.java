@@ -1,7 +1,9 @@
 package com.lsm1998.jvm.clazz;
 
 import com.lsm1998.jvm.clazz.attribute.AttributeInfo;
+import com.lsm1998.jvm.clazz.attribute.impl.SourceFile;
 import com.lsm1998.jvm.clazz.constant.ConstantInfo;
+import com.lsm1998.jvm.clazz.constant.impl.ConstantUTF8Info;
 import lombok.Data;
 
 import java.util.Arrays;
@@ -43,6 +45,19 @@ public class ClassFile
     // 属性表
     private AttributeInfo[] attributes;
 
+    // 获取SourceFile属性表
+    public SourceFile sourceFileAttribute()
+    {
+        for (AttributeInfo arrInfo : this.attributes)
+        {
+            if (arrInfo instanceof SourceFile)
+            {
+                return (SourceFile) arrInfo;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString()
     {
@@ -62,5 +77,15 @@ public class ClassFile
                 ", attributesCount=" + attributesCount +
                 ", attributes=" + Arrays.toString(attributes) +
                 '}';
+    }
+
+    public String getStringByIndex(int sourceFileIndex)
+    {
+        ConstantInfo info = this.constantInfos[sourceFileIndex];
+        if (info instanceof ConstantUTF8Info)
+        {
+            return ((ConstantUTF8Info) info).value;
+        }
+        return null;
     }
 }

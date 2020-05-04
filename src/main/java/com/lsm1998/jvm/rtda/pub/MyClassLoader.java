@@ -1,7 +1,7 @@
 package com.lsm1998.jvm.rtda.pub;
 
 import com.lsm1998.jvm.clazz.ClassRead;
-import com.lsm1998.jvm.config.RunType;
+import com.lsm1998.jvm.config.define.RunType;
 import com.lsm1998.jvm.rtda.pub.heap.methodarea.Clazz;
 import com.lsm1998.jvm.util.FileUtil;
 import lombok.Data;
@@ -19,37 +19,55 @@ public class MyClassLoader
 {
     private RunType runType;
     private String path;
-    private Map<String, Clazz> map = new HashMap<>();
+    private Map<String, Clazz> map;
+    private String mainClassPath;
+
+    public MyClassLoader(String mainClassPath)
+    {
+        this.mainClassPath = mainClassPath;
+        this.map = new HashMap<>();
+        loadBasicClasses();
+        loadPrimitiveClasses();
+    }
+
+    private void loadBasicClasses()
+    {
+
+    }
+
+    private void loadPrimitiveClasses()
+    {
+    }
 
     public Clazz loadClass(Class<?> obj)
     {
-        this.runType=RunType.CLASS_OBJ;
-        this.path = obj.getName().replace('.','/');
+        this.runType = RunType.CLASS_OBJ;
+        this.path = obj.getName().replace('.', '/');
         if (map.containsKey(path))
         {
             return map.get(path);
         }
-        return defineClass(path,obj);
+        return defineClass(path, obj);
     }
 
     public Clazz loadClass(String path)
     {
-        this.runType=RunType.CLASS_PATH;
+        this.runType = RunType.CLASS_PATH;
         this.path = path;
         if (map.containsKey(path))
         {
             return map.get(path);
         }
-        return defineClass(path,null);
+        return defineClass(path, null);
     }
 
-    private Clazz defineClass(String path,Class<?> c)
+    private Clazz defineClass(String path, Class<?> c)
     {
         byte[] bytes;
-        if(this.runType==RunType.CLASS_PATH)
+        if (this.runType == RunType.CLASS_PATH)
         {
             bytes = FileUtil.getBytes(path);
-        }else
+        } else
         {
             bytes = FileUtil.getBytesByClass(c);
         }
@@ -73,5 +91,10 @@ public class MyClassLoader
         {
             clazz.setSuperClass(clazz.getClassLoader().loadClass(clazz.getSuperClassName()));
         }
+    }
+
+    public String toString()
+    {
+        return "classloader";
     }
 }

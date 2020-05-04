@@ -1,14 +1,13 @@
 package com.lsm1998.jvm.rtda.pub.heap.methodarea;
 
 import com.lsm1998.jvm.clazz.ClassFile;
+import com.lsm1998.jvm.clazz.attribute.impl.SourceFile;
 import com.lsm1998.jvm.clazz.constant.ConstantInfo;
 import com.lsm1998.jvm.rtda.pri.stack.Slot;
 import com.lsm1998.jvm.rtda.pub.MyClassLoader;
 import com.lsm1998.jvm.util.AccessFlagsUtil;
 import com.lsm1998.jvm.util.ConstantUtil;
 import lombok.Data;
-
-import java.util.Arrays;
 
 /**
  * @作者：刘时明
@@ -25,12 +24,15 @@ public class Clazz
     private ConstantInfo[] constantInfos;
     private ClassField[] fields;
     private ClassMethod[] methods;
+    private String sourceFile;
     private MyClassLoader classLoader;
     private Clazz superClass;
     private Clazz[] interfaces;
     private long instanceSlotCount;
     private long staticSlotCount;
     private Slot staticVars;
+    private boolean initStarted;
+    private Object jClass;
 
     public Clazz(ClassFile classFile)
     {
@@ -41,28 +43,25 @@ public class Clazz
         this.className = ConstantUtil.getStringByClassInfoIndex(classFile, classFile.getThisClass());
         this.superClassName = ConstantUtil.getStringByClassInfoIndex(classFile, classFile.getSuperClass());
         this.interfaceNames = ConstantUtil.getInterfaceNames(classFile);
+        this.sourceFile = getSourceFile(classFile);
     }
 
-    @Override
-    public String toString()
+    public Clazz(int accessFlags, String className, MyClassLoader classLoader, boolean initStarted, Clazz superClass, Clazz[] interfaces)
     {
-        return "类信息{" +
-                "访问标识=" + accessFlags +
-                ", 类名='" + className + '\'' +
-                ", 父类='" + superClassName + '\'' +
-                ", 接口列表=" + Arrays.toString(interfaceNames) +
-                "\n" +
-                ", 常量池=" + Arrays.toString(constantInfos) +
-                "\n" +
-                ", 字段表=" + Arrays.toString(fields) +
-                "\n" +
-                ", 方法表=" + Arrays.toString(methods) +
-                "\n" +
-                ", 父类=" + superClass.getClassName() +
-                ", instanceSlotCount=" + instanceSlotCount +
-                ", staticSlotCount=" + staticSlotCount +
-                ", staticVars=" + staticVars +
-                '}';
+        this.accessFlags = accessFlags;
+        this.className = className;
+        this.classLoader = classLoader;
+        this.initStarted = initStarted;
+        this.superClass = superClass;
+        this.interfaces = interfaces;
+    }
+
+    public Clazz(int accessFlags, String className, MyClassLoader classLoader, boolean initStarted)
+    {
+        this.accessFlags = accessFlags;
+        this.className = className;
+        this.classLoader = classLoader;
+        this.initStarted = initStarted;
     }
 
     public boolean isInterface()
@@ -136,5 +135,43 @@ public class Clazz
             }
         }
         return null;
+    }
+
+    public boolean isPublic()
+    {
+        return 0 != (this.accessFlags & AccessFlagsUtil.ACC_PUBLIC);
+    }
+
+    public boolean isFinal()
+    {
+        return 0 != (this.accessFlags & AccessFlagsUtil.ACC_FINAL);
+    }
+
+    public boolean isSuper()
+    {
+        return 0 != (this.accessFlags & AccessFlagsUtil.ACC_SUPER);
+    }
+
+    public boolean isEnum()
+    {
+        return 0 != (this.accessFlags & AccessFlagsUtil.ACC_ENUM);
+    }
+
+    public boolean isAbstract()
+    {
+        return 0 != (this.accessFlags & AccessFlagsUtil.ACC_ABSTRACT);
+    }
+
+    public String getPackageName()
+    {
+        int i = this.className.lastIndexOf("/");
+        if (i >= 0) return this.className.substring(0, i);
+        return "";
+    }
+
+    private String getSourceFile(ClassFile classFile)
+    {
+        SourceFile sourceFile = classFile.sourceFileAttribute();
+        return null == sourceFile ? null : classFile.getStringByIndex(sourceFile.sourceFileIndex);
     }
 }

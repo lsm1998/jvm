@@ -37,4 +37,8 @@ public class JvmConfig implements Config
      **/
     // 最大操作数栈深度
     private int maxStack;
+    // 最大堆内存
+    private int heapMax;
+    // 最小堆内存
+    private int heapMin;
 }

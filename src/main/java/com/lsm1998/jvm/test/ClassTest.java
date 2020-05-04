@@ -20,7 +20,7 @@ public class ClassTest
      */
     public static void main(String[] args)
     {
-        MyClassLoader classLoader = new MyClassLoader();
+        MyClassLoader classLoader = new MyClassLoader(null);
         classLoader.loadClass("C:\\Users\\Administrator\\IdeaProjects\\jvm\\target\\classes\\com\\lsm1998\\jvm\\JvmApplication.class");
         // classLoader.loadClass("java/lang/String");
         Map<String, Clazz> map = classLoader.getMap();

@@ -31,7 +31,13 @@ public class JvmApplication
                 .mode(Modes.RUN)
                 .maxStack(512)
                 .build();
-        // 3.启动
-        starter.start();
+        // 3.启动/结束
+        try
+        {
+            starter.start();
+        } finally
+        {
+            starter.stop();
+        }
     }
 }
